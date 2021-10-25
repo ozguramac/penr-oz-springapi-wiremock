@@ -1,0 +1,11 @@
+version: '3'
+services:
+  penr-oz-springapi-wiremock:
+    image: openjdk:11-jre-slim
+    container_name: penr-oz-springapi-wiremock
+    volumes:
+    - ./build/libs/penr-oz-springapi-wiremock-0.0.1.jar:/app.jar
+    entrypoint: java
+    command: -jar /app.jar
+    ports:
+    - "8080:8080"
