@@ -27,7 +27,7 @@ $ docker-compose up
 version: '3'
 services:
   penr-oz-springapi-wiremock:
-    entrypoint: java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
+    entrypoint: java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=0.0.0.0:5005
     ports:
       - "8080:8080"
       - "5005:5005"
@@ -39,7 +39,7 @@ $ docker-compose up
 finally use your favorite IDE to put breakpoints and connect to debugger
 e.g.
 [Intellij Remote Java](https://www.jetbrains.com/help/idea/run-debug-configuration-remote-debug.html)
-which requires a correct local [JDK](https://jdk.java.net/8/)
+which requires a correct local [JDK](https://jdk.java.net/11/)
 installed.
 
 ### Stop
